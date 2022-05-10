@@ -1,0 +1,22 @@
+{
+    "trips": [
+        {
+            "cruise": {
+                "food": "lobster",
+                "transportation": "boat",
+                "lodging": "boat",
+                "actvities": "swimming",
+                "misc": ""
+            }
+        },
+        {
+            "backpacking": {
+                "food": "lobster",
+                "transportation": "boat",
+                "lodging": "boat",
+                "actvities": "swimming",
+                "misc": ""
+            }
+        }
+    ]
+}

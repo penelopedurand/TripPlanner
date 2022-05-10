@@ -25,18 +25,41 @@
 // export default App;
 
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import TaskSetUp from "./TaskSetUp";
 import TaskView from "./TaskView";
+import NavBar from "./NavBar";
 
 function App() {
+    const [formEntry, setFormEntry] = useState({})
+    const [trips, setTrips] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:8001/trips')
+            .then(resp => resp.json())
+            .then(trips => setTrips(trips))
+    }, [])
+
+    function handleNewEntry(obj) {
+        setFormEntry(obj)
+    }
+
     return (
         <div>
-            <Route path="/">
-                <Home />
-            </Route>
+            <NavBar />
+            <Switch>
+                <Route exact path="/">
+                    <Home />
+                </Route>
+                <Route exact path="/tasksetup">
+                    <TaskSetUp handleNewEntry={handleNewEntry} />
+                </Route>
+                <Route exact path="/taskview">
+                    <TaskView formEntry={formEntry} trips={trips} />
+                </Route>
+            </Switch>
         </div>
     )
 }
