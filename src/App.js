@@ -33,7 +33,7 @@ import TaskView from "./TaskView";
 import NavBar from "./NavBar";
 
 function App() {
-    const [formEntry, setFormEntry] = useState({})
+    const [formEntry, setFormEntry] = useState({ travelers: '', trip: '' })
     const [trips, setTrips] = useState([])
 
     useEffect(() => {
@@ -43,8 +43,21 @@ function App() {
     }, [])
 
     function handleNewEntry(obj) {
+        console.log(obj)
         setFormEntry(obj)
+
     }
+
+    let filteredTrip = trips.filter(trip => {
+        console.log(formEntry.trip)
+        if (formEntry.trip !== "") {
+            return trip.name.toLowerCase().includes(formEntry.trip.toLowerCase())
+        }
+        else {
+            return trips
+        }
+        // console.log(formEntry.trip)
+    })
 
     return (
         <div>
@@ -57,7 +70,7 @@ function App() {
                     <TaskSetUp handleNewEntry={handleNewEntry} />
                 </Route>
                 <Route exact path="/taskview">
-                    <TaskView formEntry={formEntry} trips={trips} />
+                    <TaskView formEntry={formEntry} trips={filteredTrip} />
                 </Route>
             </Switch>
         </div>

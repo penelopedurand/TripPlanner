@@ -5,6 +5,7 @@ import TaskView from "./TaskView";
 function TaskSetUp({ handleNewEntry }) {
     const [trip, setTrip] = useState({})
     const [travelers, setTravelers] = useState('')
+    const [newForm, setNewForm] = useState({})
 
     function handleTripType(e) {
         setTrip(e.target.value)
@@ -16,12 +17,13 @@ function TaskSetUp({ handleNewEntry }) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        const newForm = {
-            newTravelers: travelers,
-            newTrip: trip
-        }
-        handleNewEntry(newForm)
+        // setNewForm(newForm => newForm = {
+        //     newTravelers: travelers,
+        //     newTrip: trip
+        // })
+        handleNewEntry({ travelers, trip })
     }
+
 
     return (
         <div>

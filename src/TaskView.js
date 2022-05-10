@@ -8,18 +8,18 @@ function TaskView({ formEntry, trips }) {
 
     let tripObj = trips.map(trip => {
         return (
-        <TaskCard 
-            key={trip.id}
-            name={trip.name}
-            food={trip.food} 
-            transportation={trip.transportation} 
-            lodging={trip.lodging}
-            activities={trip.activities}
-            misc={trip.misc}
+            <TaskCard
+                key={trip.id}
+                name={trip.name}
+                food={trip.food}
+                transportation={trip.transportation}
+                lodging={trip.lodging}
+                activities={trip.activities}
+                misc={trip.misc}
             />
         )
     })
-        
+
 
     return (
         <div>
