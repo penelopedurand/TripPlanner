@@ -3,7 +3,7 @@ import React from "react";
 function TaskCard({ name, food, transportation, lodging, activities, misc }) {
     // console.log({food})
 
-    return(
+    return (
         <div>
             <h2>{name}</h2>
             <h2>Food</h2>
@@ -17,7 +17,7 @@ function TaskCard({ name, food, transportation, lodging, activities, misc }) {
             <h2>Misc</h2>
             <p>{misc}</p>
         </div>
-        )
-    };
+    )
+};
 
 export default TaskCard;

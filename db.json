@@ -2,22 +2,21 @@
     "trips": [
         {
             "id": 1,
-            "name": "cruise",
+            "name": "Cruise",
             "food": "lobster",
             "transportation": "boat",
             "lodging": "boat",
             "activities": "swimming",
             "misc": ""
-        }
-        ,
+        },
         {
-                "id": 2,
-                "name": "backpacking",
-                "food": "lobster",
-                "transportation": "boat",
-                "lodging": "boat",
-                "activities": "swimming",
-                "misc": ""
+            "id": 2,
+            "name": "Backpacking",
+            "food": "lobster",
+            "transportation": "boat",
+            "lodging": "boat",
+            "activities": "swimming",
+            "misc": ""
         }
     ]
 }
