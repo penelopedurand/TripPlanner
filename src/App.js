@@ -37,7 +37,7 @@ function App() {
     const [trips, setTrips] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:8001/trips')
+        fetch('http://localhost:8000/trips')
             .then(resp => resp.json())
             .then(trips => setTrips(trips))
     }, [])

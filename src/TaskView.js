@@ -1,22 +1,29 @@
 import React, { useState } from "react";
+import TaskCard from "./TaskCard";
 
 function TaskView({ formEntry, trips }) {
 
     // console.log(formEntry)
     // console.log(trips)
 
-    function tripObj(trips) {
-        trips.map(trip => {
-            if (trip === formEntry.newTrip) {
-                return (trip)
-            }
-        })
-    }
-    console.log(tripObj)
+    let tripObj = trips.map(trip => {
+        return (
+        <TaskCard 
+            key={trip.id}
+            name={trip.name}
+            food={trip.food} 
+            transportation={trip.transportation} 
+            lodging={trip.lodging}
+            activities={trip.activities}
+            misc={trip.misc}
+            />
+        )
+    })
+        
 
     return (
         <div>
-            <h1>Here are the individual tasks!</h1>
+            {tripObj}
         </div>
     )
 }
