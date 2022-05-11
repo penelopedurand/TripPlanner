@@ -81,11 +81,17 @@ function TaskFormAssign({ addNewTask }) {
             </div>
             <div>
                 <ul>
+                    <h2>Name:</h2>
                     <li>{newTaskAs.name}</li>
+                    <h2>Food:</h2>
                     <li>{newTaskAs.food}</li>
+                    <h2>Transportation:</h2>
                     <li>{newTaskAs.transportation}</li>
+                    <h2>Lodging</h2>
                     <li>{newTaskAs.lodging}</li>
+                    <h2>Activities:</h2>
                     <li>{newTaskAs.activities}</li>
+                    <h2>Misc:</h2>
                     <li>{newTaskAs.misc}</li>
                 </ul>
             </div>

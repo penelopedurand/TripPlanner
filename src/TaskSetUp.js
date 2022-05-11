@@ -6,7 +6,11 @@ import TaskView from "./TaskView";
 import TaskFormAssign from "./TaskFormAssign"
 
 function TaskSetUp({ trips, addNewTask }) {
+    const [newTrip, setNewTrip] = useState({})
 
+    function sendTaskAsToView (setTaskAs) {
+        setNewTrip(setTaskAs)
+    }
 
     let tripObj = trips.map(trip => {
         return (
@@ -31,6 +35,7 @@ function TaskSetUp({ trips, addNewTask }) {
                 <TaskFormAssign addNewTask={addNewTask} trips={trips} />
                 {/* {tripObj} */}
             </div>
+            <TaskView newTrip={newTrip}></TaskView>
         </>
     )
 }
