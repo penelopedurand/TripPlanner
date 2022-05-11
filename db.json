@@ -8,6 +8,33 @@
       "lodging": "",
       "activities": "",
       "misc": ""
+    },
+    {
+      "id": 2
+    },
+    {
+      "name": "Cruise",
+      "food": "Food",
+      "transportation": "",
+      "lodging": "",
+      "activities": "",
+      "misc": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "food": "kabobs",
+      "transportation": "Bus",
+      "lodging": "",
+      "activities": "",
+      "misc": "",
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
     }
   ]
 }
