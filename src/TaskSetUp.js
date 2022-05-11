@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TaskCard from "./TaskCard";
 import TaskView from "./TaskView";
  
 function TaskSetUp({ handleNewEntry }) {
    const [trip, setTrip] = useState({})
    const [travelers, setTravelers] = useState('')
-   const [newForm, setNewForm] = useState({})
+//    const [showTravelers, setShowTravelers] = useState(null)
+//    const [newForm, setNewForm] = useState({})
 
  
    function handleTripType(e) {
@@ -18,26 +19,31 @@ function TaskSetUp({ handleNewEntry }) {
  
    function handleSubmit(e) {
        e.preventDefault()
-    //    const newForm = {
-    //        newTravelers: travelers,
-    //        newTrip: trip
-    //    }
        handleNewEntry({travelers, trip})
+           //    for (let i = 0; i <= travelers; i++) {
+    //     console.log(i)
    }
+
  
    return (
-       <div>
-           <h1>Personalize your experience!</h1>
-           <form className="form-to-assign" onSubmit={handleSubmit}>
-               <select onChange={handleTripType} value={trip}>
-                   <option value="cruise">Cruise</option>
-                   <option value="backpacking">Backpacking</option>
-                   {/* <option value="meat">Meat</option> */}
-               </select>
-               <input placeholder="Pick number of travelers" value={travelers} onChange={handleChange}></input>
-               <button>Submit</button>
-           </form>
-       </div>
+       <>
+        <div>
+            <h1>Personalize your experience!</h1>
+            <form className="form-to-assign" onSubmit={handleSubmit}>
+                <select onChange={handleTripType} value={trip}>
+                    <option value="" placeholder="choose"></option>
+                    <option value="cruise">Cruise</option>
+                    <option value="backpacking">Backpacking</option>
+                    {/* <option value="meat">Meat</option> */}
+                </select>
+                <input placeholder="Pick number of travelers" value={travelers} onChange={handleChange}></input>
+                <button>Submit</button>
+            </form>
+        </div>
+            <div>
+            {/* {showTravelers} */}
+        </div>
+     </>
    )
 }
  
