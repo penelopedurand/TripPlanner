@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 // import './App.css';
-
+ 
 // function App() {
 //   return (
 //     <div className="App">
@@ -21,10 +21,10 @@
 //     </div>
 //   );
 // }
-
+ 
 // export default App;
-
-
+ 
+ 
 import React, { useEffect, useState } from "react"
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
@@ -43,13 +43,13 @@ function App() {
     }, [])
 
     function handleNewEntry(obj) {
-        console.log(obj)
+        // console.log(obj)
         setFormEntry(obj)
 
     }
 
     let filteredTrip = trips.filter(trip => {
-        console.log(formEntry.trip)
+        // console.log(formEntry.trip)
         if (formEntry.trip !== "") {
             return trip.name.toLowerCase().includes(formEntry.trip.toLowerCase())
         }
@@ -58,6 +58,7 @@ function App() {
         }
         // console.log(formEntry.trip)
     })
+
 
     return (
         <div>
