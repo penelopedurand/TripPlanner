@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 function TaskFormDetail ({currentTrip, handleFormSubmit, entryFields}) {
+    console.log(currentTrip)
     
     const [food, setFood] = useState(entryFields.food)
     const [transportation, setTransportation] = useState(entryFields.transportation)
@@ -33,6 +34,7 @@ function TaskFormDetail ({currentTrip, handleFormSubmit, entryFields}) {
         e.preventDefault()
         const addDetails = ({
             id: currentTrip.id,
+            name: currentTrip.name, 
             food: food,
             transportation: transportation,
             lodging: lodging,
@@ -48,13 +50,21 @@ function TaskFormDetail ({currentTrip, handleFormSubmit, entryFields}) {
     return (
         <form className="ui form" onSubmit={handleSubmit}>
             <div className="inline fields">
-                <label>Name:
-                <input type="text" name="food" value={food} onChange={handleFoodChange} />
+                <label>Food:
+                <input type="text" name="food" placeholder="Shopping List"value={food} onChange={handleFoodChange} />
                 </label>
+                <label>Transportation:
                 <input type="text" name="transportation" placeholder="Transportation Details" value={transportation} onChange={handleTransChange} />
+                </label>
+                <label>Lodging:
                 <input type="text" name="lodging" placeholder="Lodging Reservations" value={lodging} onChange={handleLodChange} />
+                </label>
+                <label>Activities:
                 <input type="text" name="activities" placeholder="List Activities" value={activities} onChange={handleActChange} />
+                </label>
+                <label>Miscellaneous:
                 <input type="text" name="miscellaneous" placeholder="Additional Trip Plans" value={misc} onChange={handleMiscChange} />
+                </label>
             </div>
             <button className="ui button" type="submit">
                 Add Your Plans

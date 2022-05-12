@@ -7,6 +7,15 @@
       "lodging": "asdf#########",
       "activities": "sadf#########",
       "misc": "asdf#########"
+    },
+    {
+      "id": 2,
+      "name": "one",
+      "food": "two 2",
+      "transportation": "three 3",
+      "lodging": "four4",
+      "activities": "five5",
+      "misc": "six6"
     }
   ]
 }
