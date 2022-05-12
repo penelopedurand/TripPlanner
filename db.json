@@ -2,39 +2,20 @@
   "trips": [
     {
       "id": 1,
-      "name": "",
-      "food": "",
-      "transportation": "",
-      "lodging": "",
-      "activities": "",
-      "misc": ""
+      "food": "asdf#########",
+      "transportation": "asdf#########",
+      "lodging": "asdf#########",
+      "activities": "sadf#########",
+      "misc": "asdf#########"
     },
     {
-      "id": 2
-    },
-    {
-      "name": "Cruise",
-      "food": "Food",
-      "transportation": "",
-      "lodging": "",
-      "activities": "",
-      "misc": "",
-      "id": 3
-    },
-    {
-      "name": "",
-      "food": "kabobs",
-      "transportation": "Bus",
-      "lodging": "",
-      "activities": "",
-      "misc": "",
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
+      "id": 2,
+      "name": "one",
+      "food": "two 2",
+      "transportation": "three 3",
+      "lodging": "four4",
+      "activities": "five5",
+      "misc": "six6"
     }
   ]
 }

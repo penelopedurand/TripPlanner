@@ -7,8 +7,8 @@ import NavBar from "./NavBar";
 
 
 function App() {
-    const [formEntry, setFormEntry] = useState({ travelers: '', trip: '' })
     const [trips, setTrips] = useState([])
+    const [entryFields, setEntryFields] = useState("")
 
     useEffect(() => {
         fetch('http://localhost:8000/trips')
@@ -16,15 +16,8 @@ function App() {
             .then(trips => setTrips(trips))
     }, [])
 
-    function handleNewEntry(obj) {
-        // console.log(obj)
-        setFormEntry(obj)
-
-    }
-
-
-    function addNewTask(obj) {
-        setTrips(...trips, obj)
+    function passUp(pplAssign) {
+        setEntryFields(pplAssign)
     }
 
 
@@ -36,10 +29,10 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/tasksetup">
-                    <TaskSetUp handleNewEntry={handleNewEntry} formEntry={formEntry} trips={trips} addNewTask={addNewTask} />
+                    <TaskSetUp trips={trips} passUp={passUp} />
                 </Route>
                 <Route exact path="/taskview">
-                    <TaskView trips={trips} />
+                    <TaskView trips={trips} entryFields={entryFields}/>
                 </Route>
             </Switch>
         </div>
