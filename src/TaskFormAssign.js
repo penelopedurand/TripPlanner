@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function TaskFormAssign({ addNewTask, sendTaskAsToView }) {
     const [name, setName] = useState('')
@@ -9,7 +9,6 @@ function TaskFormAssign({ addNewTask, sendTaskAsToView }) {
     const [misc, setMisc] = useState('')
     const [newTaskAs, setNewTaskAs] = useState({})
 
-    sendTaskAsToView(newTaskAs);
 
     function handleNameChange(e) {
         setName(e.target.value)
@@ -37,7 +36,7 @@ function TaskFormAssign({ addNewTask, sendTaskAsToView }) {
 
     // let newTaskAs = {}
 
-
+    
     function handleSubmit(e) {
         e.preventDefault()
         setNewTaskAs({
@@ -48,6 +47,10 @@ function TaskFormAssign({ addNewTask, sendTaskAsToView }) {
             activities: activities,
             misc: misc
         })
+    }
+   
+
+    useEffect(() => {
         fetch('http://localhost:8000/trips', {
             method: 'POST',
             headers: {
@@ -61,8 +64,9 @@ function TaskFormAssign({ addNewTask, sendTaskAsToView }) {
         setLodging('')
         setActivities('')
         setMisc('')
+    }, [newTaskAs])
 
-    }
+    sendTaskAsToView(newTaskAs);
     // console.log(newTaskAs)
     return (
         <>

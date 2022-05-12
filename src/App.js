@@ -22,15 +22,15 @@ function App() {
             .then(trips => setTrips(trips))
     }, [])
 
-    function handleNewEntry(obj) {
-        // console.log(obj)
-        setFormEntry(obj)
-
-    }
+    // function handleNewEntry(obj) {
+    //     // console.log(obj)
+    //     setFormEntry(obj)
+    // handleNewEntry={handleNewEntry} sent as props to task setup
+    // }
 
 
     function addNewTask(obj) {
-        setTrips(...trips, obj)
+        setTrips(...trips, obj) 
     }
 
 
@@ -42,7 +42,7 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/tasksetup">
-                    <TaskSetUp handleNewEntry={handleNewEntry} formEntry={formEntry} trips={trips} addNewTask={addNewTask} sendTaskAsToView={sendTaskAsToView} newTrip={newTrip}/>
+                    <TaskSetUp addNewTask={addNewTask} formEntry={formEntry} trips={trips} sendTaskAsToView={sendTaskAsToView} newTrip={newTrip}/>
                 </Route>
                 <Route exact path="/taskview">
                     <TaskView trips={trips} newTrip={newTrip} />
