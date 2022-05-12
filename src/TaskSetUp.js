@@ -3,7 +3,7 @@ import { Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TaskFormAssign from "./TaskFormAssign"
 
-function TaskSetUp({ trips, addNewTask , newTrip, sendTaskAsToView}) {
+function TaskSetUp({ trips, addNewTask, passUp }) {
     
 
     return (
@@ -12,7 +12,7 @@ function TaskSetUp({ trips, addNewTask , newTrip, sendTaskAsToView}) {
                 <Alert key={'warning'} variant={'warning'}>Personalize your experience!</Alert>
             </div>
             <div>
-                <TaskFormAssign addNewTask={addNewTask} trips={trips} sendTaskAsToView={sendTaskAsToView}/>
+                <TaskFormAssign addNewTask={addNewTask} trips={trips} passUp={passUp} />
             </div>
         </>
     )

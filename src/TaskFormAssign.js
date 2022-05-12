@@ -1,88 +1,53 @@
 import React, { useState, useEffect } from "react";
-// import uuid from 'react-uuid';
+import uuid from 'react-uuid';
 
-function TaskFormAssign({ addNewTask, sendTaskAsToView }) {
-    const [name, setName] = useState('')
-    const [food, setFood] = useState('')
-    const [transportation, setTransportation] = useState('')
-    const [lodging, setLodging] = useState('')
-    const [activities, setActivities] = useState('')
-    const [misc, setMisc] = useState('')
+function TaskFormAssign({ addNewTask, passUp }) {
+ 
+    const [pplAssign, setPplAssign] = useState({     
+        "id": uuid,
+        "name": "",
+        "food": "",
+        "transportation": "",
+        "lodging": "",
+        "activities": "",
+        "misc": ""
+    });
+    
     const [newTaskAs, setNewTaskAs] = useState({})
 
 
-    function handleNameChange(e) {
-        setName(e.target.value)
-    }
-
-    function handleFoodChange(e) {
-        setFood(e.target.value)
-    }
-
-    function handleTransChange(e) {
-        setTransportation(e.target.value)
-    }
-
-    function handleLodChange(e) {
-        setLodging(e.target.value)
-    }
-
-    function handleActChange(e) {
-        setActivities(e.target.value)
-    }
-
-    function handleMiscChange(e) {
-        setMisc(e.target.value)
-    }
-
-    // let newTaskAs = {}
-
+    function handleChange(e) {
+        let newEntry = {...pplAssign, [e.target.name]: e.target.value}
+        setPplAssign(newEntry)
+      };
     
     function handleSubmit(e) {
         e.preventDefault()
-        setNewTaskAs({
-            name: name,
-            food: food,
-            transportation: transportation,
-            lodging: lodging,
-            activities: activities,
-            misc: misc
-        })
-    }
-    
-    
-   
-
-    useEffect(() => {
+       
         fetch('http://localhost:8000/trips', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(newTaskAs),
+            body: JSON.stringify(pplAssign),
         })
-    //     setName('')
-    //     setFood('')
-    //     setTransportation('')
-    //     setLodging('')
-    //     setActivities('')
-    //     setMisc('')
-    }, [newTaskAs]
-    )
 
-    // sendTaskAsToView(newTaskAs);
-    // console.log(newTaskAs)
+        setNewTaskAs(pplAssign)
+        passUp(pplAssign)
+    }
+    
+    
     return (
         <>
             <div className="ui segment">
                 <form className="ui form" onSubmit={handleSubmit}>
                     <div className="inline fields">
-                        <input type="text" name="name" placeholder="Name Your Trip" value={name} onChange={handleNameChange} />
-                        <input type="text" name="food" placeholder="Food" value={food} onChange={handleFoodChange} />
-                        <input type="text" name="transportation" placeholder="Transportation" value={transportation} onChange={handleTransChange} />
-                        <input type="text" name="lodging" placeholder="Lodging" value={lodging} onChange={handleLodChange} />
-                        <input type="text" name="activities" placeholder="Activities" value={activities} onChange={handleActChange} />
-                        <input type="text" name="miscellaneous" placeholder="Miscellaneous" value={misc} onChange={handleMiscChange} />
+                        <input type="text" name="name" placeholder="Name Your Trip" value={pplAssign.name} onChange={handleChange} />
+                        <input type="text" name="food" placeholder="Food" value={pplAssign.food} onChange={handleChange} />
+                        <input type="text" name="transportation" placeholder="Transportation" value={pplAssign.transportation} onChange={handleChange} />
+                        <input type="text" name="lodging" placeholder="Lodging" value={pplAssign.lodging} onChange={handleChange} />
+                        <input type="text" name="activities" placeholder="Activities" value={pplAssign.activities} onChange={handleChange} />
+                        <input type="text" name="misc" placeholder="Miscellaneous" value={pplAssign.misc} onChange={handleChange} />
                     </div>
                     <button className="ui button" type="submit">
                         Add Task Assignment

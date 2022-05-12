@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 import TaskFormDetail from "./TaskFormDetail"
 
-function TaskView() {
- 
+function TaskView({entryFields}) {
+    
+    console.log(entryFields)
     const [currentTrip, setCurrentTrip] = useState([]);
 
     function handleClick(e){
@@ -10,13 +11,24 @@ function TaskView() {
             .then(resp => resp.json())
             .then(data => setCurrentTrip(data[data.length-1]))
     }
+    
+    function handleFormSubmit (addDetails) {
+        // let {id, food, transportation, lodging, activities, misc} = addDetails
+        fetch(`http://localhost:8000/trips/${currentTrip.id}`, {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(addDetails),
+        })     
+        console.log(addDetails)      
+    }
 
 
+    // food, transportation, lodging, activities, misc
 
 
     return (
         <>
-            <TaskFormDetail currentTrip={currentTrip} />
+            <TaskFormDetail currentTrip={currentTrip} handleFormSubmit={handleFormSubmit} entryFields={entryFields} />
             <button onClick={handleClick}>Show Trip</button>
             <h3>{currentTrip.id}</h3>
             <ul>

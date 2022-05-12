@@ -2,30 +2,11 @@
   "trips": [
     {
       "id": 1,
-      "name": "",
-      "food": "",
-      "transportation": "",
-      "lodging": "",
-      "activities": "",
-      "misc": ""
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "name": "sdaf",
-      "food": "asdf",
-      "transportation": "asdf",
-      "lodging": "asdf",
-      "activities": "asdf",
-      "misc": "asdf",
-      "id": 5
+      "food": "asdf#########",
+      "transportation": "asdf#########",
+      "lodging": "asdf#########",
+      "activities": "sadf#########",
+      "misc": "asdf#########"
     }
   ]
 }

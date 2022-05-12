@@ -8,12 +8,17 @@ import NavBar from "./NavBar";
 
 function App() {
     const [trips, setTrips] = useState([])
+    const [entryFields, setEntryFields] = useState("")
 
     useEffect(() => {
         fetch('http://localhost:8000/trips')
             .then(resp => resp.json())
             .then(trips => setTrips(trips))
     }, [])
+
+    function passUp(pplAssign) {
+        setEntryFields(pplAssign)
+    }
 
 
     return (
@@ -24,10 +29,10 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path="/tasksetup">
-                    <TaskSetUp trips={trips} />
+                    <TaskSetUp trips={trips} passUp={passUp} />
                 </Route>
                 <Route exact path="/taskview">
-                    <TaskView trips={trips} />
+                    <TaskView trips={trips} entryFields={entryFields}/>
                 </Route>
             </Switch>
         </div>

@@ -1,14 +1,13 @@
 import React, {useState, useEffect} from "react";
 
-function TaskFormDetail ({currentTrip}) {
-    const [food, setFood] = useState('')
-    const [transportation, setTransportation] = useState('')
-    const [lodging, setLodging] = useState('')
-    const [activities, setActivities] = useState('')
-    const [misc, setMisc] = useState('')
+function TaskFormDetail ({currentTrip, handleFormSubmit, entryFields}) {
+    
+    const [food, setFood] = useState(entryFields.food)
+    const [transportation, setTransportation] = useState(entryFields.transportation)
+    const [lodging, setLodging] = useState(entryFields.lodging)
+    const [activities, setActivities] = useState(entryFields.activities)
+    const [misc, setMisc] = useState(entryFields.misc)
     const [newTaskAs, setNewTaskAs] = useState(currentTrip)
-
-    console.log(newTaskAs)
 
     function handleFoodChange(e) {
         setFood(e.target.value)
@@ -30,9 +29,9 @@ function TaskFormDetail ({currentTrip}) {
         setMisc(e.target.value)
     }
 
-    function handleSubmit(e) {
+    function handleSubmit (e) {
         e.preventDefault()
-        setNewTaskAs({
+        const addDetails = ({
             id: currentTrip.id,
             food: food,
             transportation: transportation,
@@ -40,30 +39,18 @@ function TaskFormDetail ({currentTrip}) {
             activities: activities,
             misc: misc
         })
+        setNewTaskAs(addDetails)
+        handleFormSubmit(addDetails)
     }
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:8000/trips/${newTrip.id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(newTaskAs),
-    //     })
-    //     setFood('')
-    //     setTransportation('')
-    //     setLodging('')
-    //     setActivities('')
-    //     setMisc('')
-    // }, [newTrip.id, newTaskAs])
-
-    // sendTaskAsToView(newTaskAs);
 
    
     return (
         <form className="ui form" onSubmit={handleSubmit}>
             <div className="inline fields">
-                <input type="text" name="food" placeholder="Shopping List Here" value={food} onChange={handleFoodChange} />
+                <label>Name:
+                <input type="text" name="food" value={food} onChange={handleFoodChange} />
+                </label>
                 <input type="text" name="transportation" placeholder="Transportation Details" value={transportation} onChange={handleTransChange} />
                 <input type="text" name="lodging" placeholder="Lodging Reservations" value={lodging} onChange={handleLodChange} />
                 <input type="text" name="activities" placeholder="List Activities" value={activities} onChange={handleActChange} />
