@@ -5,12 +5,10 @@ import TaskCard from "./TaskCard";
 import TaskView from "./TaskView";
 import TaskFormAssign from "./TaskFormAssign"
 
-function TaskSetUp({ trips, addNewTask }) {
-    const [newTrip, setNewTrip] = useState({})
+function TaskSetUp({ trips, addNewTask , newTrip, sendTaskAsToView}) {
+    
 
-    function sendTaskAsToView (setTaskAs) {
-        setNewTrip(setTaskAs)
-    }
+
 
     let tripObj = trips.map(trip => {
         return (
@@ -32,7 +30,7 @@ function TaskSetUp({ trips, addNewTask }) {
                 <Alert key={'warning'} variant={'warning'}>Personalize your experience!</Alert>
             </div>
             <div>
-                <TaskFormAssign addNewTask={addNewTask} trips={trips} />
+                <TaskFormAssign addNewTask={addNewTask} trips={trips} sendTaskAsToView={sendTaskAsToView}/>
                 {/* {tripObj} */}
             </div>
             <TaskView newTrip={newTrip}></TaskView>

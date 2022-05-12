@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TaskFormAssign({ addNewTask }) {
+function TaskFormAssign({ addNewTask, sendTaskAsToView }) {
     const [name, setName] = useState('')
     const [food, setFood] = useState('')
     const [transportation, setTransportation] = useState('')
@@ -8,6 +8,8 @@ function TaskFormAssign({ addNewTask }) {
     const [activities, setActivities] = useState('')
     const [misc, setMisc] = useState('')
     const [newTaskAs, setNewTaskAs] = useState({})
+
+    sendTaskAsToView(newTaskAs);
 
     function handleNameChange(e) {
         setName(e.target.value)
@@ -61,7 +63,7 @@ function TaskFormAssign({ addNewTask }) {
         setMisc('')
 
     }
-    console.log(newTaskAs)
+    // console.log(newTaskAs)
     return (
         <>
             <div className="ui segment">

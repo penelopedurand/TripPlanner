@@ -1,29 +1,11 @@
-import React, { useState } from "react";
-import TaskCard from "./TaskCard";
+import React from "react";
 
 function TaskView({ newTrip }) {
-    console.log(newTrip)
+    console.log('new trip', newTrip)
+    console.log(Boolean(newTrip))
 
-    // console.log(formEntry)
-    //    console.log(trips)
 
-    // let tripObj = trips.map(trip => {
-    //     return (
-    //         <TaskCard
-    //             key={trip.id}
-    //             name={trip.name}
-    //             food={trip.food}
-    //             transportation={trip.transportation}
-    //             lodging={trip.lodging}
-    //             activities={trip.activities}
-    //             misc={trip.misc}
-    //         />
-    //     )
-    // })
-
-    const showTrip = (newTrip) => { 
-    if (newTrip !== undefined) {
-        return (
+    return (
         <ul>
             <h2>Name:</h2>
             <li>{newTrip.name}</li>
@@ -38,14 +20,6 @@ function TaskView({ newTrip }) {
             <h2>Misc:</h2>
             <li>{newTrip.misc}</li>
         </ul> 
-        )}
-    }
-
-
-    return (
-        <div>
-           {showTrip}
-        </div>
     )
 }
 
