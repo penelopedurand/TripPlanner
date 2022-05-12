@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import uuid from 'react-uuid';
 
 function TaskFormAssign({ addNewTask, sendTaskAsToView }) {
     const [name, setName] = useState('')
@@ -48,6 +49,8 @@ function TaskFormAssign({ addNewTask, sendTaskAsToView }) {
             misc: misc
         })
     }
+    
+    
    
 
     useEffect(() => {
@@ -58,15 +61,16 @@ function TaskFormAssign({ addNewTask, sendTaskAsToView }) {
             },
             body: JSON.stringify(newTaskAs),
         })
-        setName('')
-        setFood('')
-        setTransportation('')
-        setLodging('')
-        setActivities('')
-        setMisc('')
-    }, [newTaskAs])
+    //     setName('')
+    //     setFood('')
+    //     setTransportation('')
+    //     setLodging('')
+    //     setActivities('')
+    //     setMisc('')
+    }, [newTaskAs]
+    )
 
-    sendTaskAsToView(newTaskAs);
+    // sendTaskAsToView(newTaskAs);
     // console.log(newTaskAs)
     return (
         <>
