@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 function Home() {
     const [loggedIn, setLoggedIn] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('')
+
+    const history = useHistory()
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -15,6 +17,7 @@ function Home() {
         }, 5000)
         setPassword('')
         setUsername('')
+        history.push("/tasksetup")
     }
 
 
@@ -30,16 +33,21 @@ function Home() {
 
     return (
         <>
+            <br></br>
+            <br></br>
             <h2 className="welcome">Plan Your Next Group Trip!</h2>
+            <br></br>
             <form className="form" onSubmit={handleSubmit}>
                 <div className="input-for-login">
                     <label>Username:</label>
                     <input className="not-taskview" type="text" name="username" placeholder="Type Username" value={username} onChange={handleUsernameChange} />
+                    <br></br>
                     <label>Password:</label>
                     <input className="not-taskview" type="text" name="password" placeholder="Type Password" value={password} onChange={handlePasswordChange} />
                 </div>
+                <br></br>
                 <button className="button-86" value={loggedIn} type="submit">
-                    <NavLink to="/tasksetup">{loggedIn ? "Logged In" : "Log In"}</NavLink>
+                    {loggedIn ? "Logged In" : "Log In"}
                 </button>
             </form>
         </>

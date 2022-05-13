@@ -24,6 +24,7 @@ function App() {
     return (
         <div>
             <NavBar />
+            <br></br>
             <Switch>
                 <Route exact path="/">
                     <Home />
@@ -32,7 +33,7 @@ function App() {
                     <TaskSetUp trips={trips} passUp={passUp} />
                 </Route>
                 <Route exact path="/taskview">
-                    <TaskView trips={trips} entryFields={entryFields}/>
+                    <TaskView trips={trips} entryFields={entryFields} />
                 </Route>
             </Switch>
         </div>

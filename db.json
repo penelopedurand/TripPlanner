@@ -25,6 +25,15 @@
       "lodging": "Johnny:airb",
       "activities": "bella: monopolu",
       "misc": "jake: get beers"
+    },
+    {
+      "name": "",
+      "food": "",
+      "transportation": "",
+      "lodging": "",
+      "activities": "",
+      "misc": "",
+      "id": 4
     }
   ]
 }
