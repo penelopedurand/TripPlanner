@@ -164,6 +164,17 @@ body {
 }
 
 li {
-  list-style-image: url('/Users/patrickhart/Development/code/phase-2/TripPlanner/src/Images/clipart89638 (1).png');
+  list-style-image: url('/Users/penelopedurand/Development/code/phase-2/trip-planner/src/Images/clipart89638 (1).png');
 }
 
+.visibility {
+  visibility: hidden;
+}
+
+.showList {
+  color: #5F634F;
+  background-color: #CFEBDF;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: #5F634F;
+}

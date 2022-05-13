@@ -8,6 +8,7 @@ function NavBar() {
                 <NavLink exact to="/">Home</NavLink>
                 <NavLink to="/tasksetup">Task Setup</NavLink>
                 <NavLink to="/taskview">Task View</NavLink>
+                <NavLink to="/triplist">All Trips</NavLink>
             </div>
         </>
     )
