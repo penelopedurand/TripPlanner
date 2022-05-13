@@ -48,28 +48,37 @@ function TaskFormDetail({ currentTrip, handleFormSubmit, entryFields }) {
 
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
-            <div className="inline fields">
-                <label>Food:
+        <>
+            <h2 className="task-h2">Personalize Your Experience!</h2>
+            <br></br>
+            <form className="form" onSubmit={handleSubmit}>
+                <div className="inline-fields-assign">
+                    <label>Food:</label>
                     <input className="taskview-input" type="text" name="food" placeholder="Shopping List" value={food} onChange={handleFoodChange} />
-                </label>
-                <label>Transportation:
+
+                    <label>Transportation:</label>
                     <input className="taskview-input" type="text" name="transportation" placeholder="Transportation Details" value={transportation} onChange={handleTransChange} />
-                </label>
-                <label>Lodging:
+
+
+                    <label>Lodging:</label>
                     <input className="taskview-input" type="text" name="lodging" placeholder="Lodging Reservations" value={lodging} onChange={handleLodChange} />
-                </label>
-                <label>Activities:
+
+
+                    <label>Activities:</label>
                     <input className="taskview-input" type="text" name="activities" placeholder="List Activities" value={activities} onChange={handleActChange} />
-                </label>
-                <label>Miscellaneous:
+
+
+                    <label>Miscellaneous:</label>
                     <input className="taskview-input" type="text" name="miscellaneous" placeholder="Additional Trip Plans" value={misc} onChange={handleMiscChange} />
-                </label>
-            </div>
-            <button className="ui button" type="submit">
-                Add Your Plans
-            </button>
-        </form>
+
+
+                </div>
+                <br></br>
+                <button className="buttons" type="submit">
+                    Add Your Plans
+                </button>
+            </form >
+        </>
     )
 }
 

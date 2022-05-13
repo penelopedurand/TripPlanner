@@ -4,12 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import TaskFormAssign from "./TaskFormAssign"
 
 function TaskSetUp({ trips, addNewTask, passUp }) {
-    
+
 
     return (
         <>
-            <div>
-                <Alert key={'warning'} variant={'warning'}>Personalize your experience!</Alert>
+            <div className="task-h2">
+                <h2>Assign Your Leaders!</h2>
             </div>
             <div>
                 <TaskFormAssign addNewTask={addNewTask} trips={trips} passUp={passUp} />

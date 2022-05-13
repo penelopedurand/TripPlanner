@@ -41,7 +41,7 @@ function TaskFormAssign({ addNewTask, passUp }) {
         <>
             <div className="ui segment">
                 <form className="form" onSubmit={handleSubmit}>
-                    <div className="inline fields">
+                    <div className="inline-fields">
                         <input className="not-taskview" type="text" name="name" placeholder="Name Your Trip" value={pplAssign.name} onChange={handleChange} />
                         <input className="not-taskview" type="text" name="food" placeholder="Food Boss" value={pplAssign.food} onChange={handleChange} />
                         <input className="not-taskview" type="text" name="transportation" placeholder="Transportation Chief" value={pplAssign.transportation} onChange={handleChange} />
@@ -49,7 +49,7 @@ function TaskFormAssign({ addNewTask, passUp }) {
                         <input className="not-taskview" type="text" name="activities" placeholder="Activities Mascot" value={pplAssign.activities} onChange={handleChange} />
                         <input className="not-taskview" type="text" name="misc" placeholder="Miscellaneous Manager" value={pplAssign.misc} onChange={handleChange} />
                     </div>
-                    <button className="ui button" type="submit">
+                    <button className="buttons" type="submit">
                         Add Task Assignment
                     </button>
                 </form>
