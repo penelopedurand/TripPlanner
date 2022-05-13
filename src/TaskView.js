@@ -1,27 +1,31 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import TaskFormDetail from "./TaskFormDetail"
 
-function TaskView({entryFields}) {
-    
+function TaskView({ entryFields }) {
+
     console.log(entryFields)
     const [currentTrip, setCurrentTrip] = useState([]);
 
-    function handleClick(e){
+    // function handleClick(e) {
+    //     // fetch('http://localhost:8000/trips')
+    //     //     .then(resp => resp.json())
+    //     //     .then(data => setCurrentTrip(data[data.length - 1]))
+    // }
+
+    function handleFormSubmit(addDetails) {
+        // let {id, food, transportation, lodging, activities, misc} = addDetails
         fetch('http://localhost:8000/trips')
             .then(resp => resp.json())
-            .then(data => setCurrentTrip(data[data.length-1]))
-    }
-    
-    function handleFormSubmit (addDetails) {
-        // let {id, food, transportation, lodging, activities, misc} = addDetails
-        fetch(`http://localhost:8000/trips/${currentTrip.id}`, {
-            method: 'PUT',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(addDetails),
-        })     
-        console.log(addDetails)      
-    }
+            .then(data => setCurrentTrip(data[data.length - 1]))
+            .then(fetch(`http://localhost:8000/trips/${currentTrip.id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(addDetails),
+            }))
+            .then(setCurrentTrip(addDetails))
 
+    }
+    // 
 
     // food, transportation, lodging, activities, misc
 
@@ -29,8 +33,7 @@ function TaskView({entryFields}) {
     return (
         <>
             <TaskFormDetail currentTrip={currentTrip} handleFormSubmit={handleFormSubmit} entryFields={entryFields} />
-            <button onClick={handleClick}>Show Trip</button>
-            <h3>{currentTrip.id}</h3>
+            {/* <button onClick={handleClick}>Show Trip</button> */}
             <ul>
                 <h2>Name:</h2>
                 <li>{currentTrip.name}</li>
@@ -44,7 +47,7 @@ function TaskView({entryFields}) {
                 <li>{currentTrip.activities}</li>
                 <h2>Misc:</h2>
                 <li>{currentTrip.misc}</li>
-            </ul> 
+            </ul>
         </>
     )
 }

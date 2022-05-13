@@ -10,12 +10,21 @@
     },
     {
       "id": 2,
-      "name": "one",
-      "food": "two 2",
-      "transportation": "three 3",
-      "lodging": "four4",
-      "activities": "five5",
-      "misc": "six6"
+      "name": "Doggo",
+      "food": "Penelope:food",
+      "transportation": "Patrick:train",
+      "lodging": "Johnny:airb",
+      "activities": "bella: monopolu",
+      "misc": "Bob, beers"
+    },
+    {
+      "id": 3,
+      "name": "Doggo",
+      "food": "Penelope:food",
+      "transportation": "Patrick:train",
+      "lodging": "Johnny:airb",
+      "activities": "bella: monopolu",
+      "misc": "jake: get beers"
     }
   ]
 }
