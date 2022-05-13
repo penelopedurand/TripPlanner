@@ -8,6 +8,7 @@ body {
   background-size: 100%;
   opacity: 0.80;
   background-attachment: fixed;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .welcome {
@@ -161,3 +162,8 @@ body {
 .ui-segment {
   width: 50%;
 }
+
+li {
+  list-style-image: url('/Users/patrickhart/Development/code/phase-2/TripPlanner/src/Images/clipart89638 (1).png');
+}
+

@@ -34,6 +34,8 @@ function TaskView({ entryFields }) {
         <>
             <TaskFormDetail currentTrip={currentTrip} handleFormSubmit={handleFormSubmit} entryFields={entryFields} />
             {/* <button onClick={handleClick}>Show Trip</button> */}
+            <br></br>
+            <br></br>
             <ul>
                 <h2>Name:</h2>
                 <li>{currentTrip.name}</li>

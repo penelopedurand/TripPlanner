@@ -54,8 +54,10 @@ function TaskFormAssign({ addNewTask, passUp }) {
                     </button>
                 </form>
             </div>
+            <br></br>
+            <br></br>
             <div>
-                <ul>
+                <ul className="trip-view-container">
                     <h2>Name:</h2>
                     <li>{newTaskAs.name}</li>
                     <h2>Food:</h2>

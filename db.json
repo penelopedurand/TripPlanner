@@ -34,6 +34,78 @@
       "activities": "",
       "misc": "",
       "id": 4
+    },
+    {
+      "name": "fasdf",
+      "food": "asdf",
+      "transportation": "",
+      "lodging": "",
+      "activities": "",
+      "misc": "",
+      "id": 5
+    },
+    {
+      "name": "fasdf",
+      "food": "fasdf",
+      "transportation": "",
+      "lodging": "",
+      "activities": "",
+      "misc": "",
+      "id": 6
+    },
+    {
+      "name": "fasdf",
+      "food": "fasdf",
+      "transportation": "",
+      "lodging": "fasd",
+      "activities": "",
+      "misc": "",
+      "id": 7
+    },
+    {
+      "name": "Johnny's Trip",
+      "food": "Johnny",
+      "transportation": "Johnny",
+      "lodging": "Johnny",
+      "activities": "Johnny",
+      "misc": "Johnny",
+      "id": 8
+    },
+    {
+      "name": "dfsa",
+      "food": "asfd",
+      "transportation": "asdf",
+      "lodging": "adsdf",
+      "activities": "asd",
+      "misc": "afsd",
+      "id": 9
+    },
+    {
+      "name": "adsfad",
+      "food": "",
+      "transportation": "",
+      "lodging": "",
+      "activities": "",
+      "misc": "",
+      "id": 10
+    },
+    {
+      "name": "adsfad",
+      "food": "sdafsdfa",
+      "transportation": "",
+      "lodging": "",
+      "activities": "",
+      "misc": "",
+      "id": 11
+    },
+    {
+      "id": 12,
+      "name": "Johnny's Trip",
+      "food": "Boss: fsdgsf",
+      "transportation": "Chief: adsfa",
+      "lodging": "Director: adsf",
+      "activities": "Mascot: aasdf",
+      "misc": "Manager: adf "
     }
   ]
 }

@@ -3,11 +3,11 @@ import React, { useState, useEffect } from "react";
 function TaskFormDetail({ currentTrip, handleFormSubmit, entryFields }) {
     console.log(currentTrip)
 
-    const [food, setFood] = useState(entryFields.food)
-    const [transportation, setTransportation] = useState(entryFields.transportation)
-    const [lodging, setLodging] = useState(entryFields.lodging)
-    const [activities, setActivities] = useState(entryFields.activities)
-    const [misc, setMisc] = useState(entryFields.misc)
+    const [food, setFood] = useState(entryFields.food ? entryFields.food + ':' : "")
+    const [transportation, setTransportation] = useState(entryFields.transportation ? entryFields.transportation + ":" : "")
+    const [lodging, setLodging] = useState(entryFields.lodging ? entryFields.lodging + ":" : "")
+    const [activities, setActivities] = useState(entryFields.activities ? entryFields.activities + ":" : "")
+    const [misc, setMisc] = useState(entryFields.misc ? entryFields.misc + ":" : "")
     const [newTaskAs, setNewTaskAs] = useState(currentTrip)
 
     function handleFoodChange(e) {
