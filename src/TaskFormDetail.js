@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
-function TaskFormDetail ({currentTrip, handleFormSubmit, entryFields}) {
+function TaskFormDetail({ currentTrip, handleFormSubmit, entryFields }) {
     console.log(currentTrip)
-    
+
     const [food, setFood] = useState(entryFields.food)
     const [transportation, setTransportation] = useState(entryFields.transportation)
     const [lodging, setLodging] = useState(entryFields.lodging)
@@ -30,11 +30,11 @@ function TaskFormDetail ({currentTrip, handleFormSubmit, entryFields}) {
         setMisc(e.target.value)
     }
 
-    function handleSubmit (e) {
+    function handleSubmit(e) {
         e.preventDefault()
         const addDetails = ({
             id: currentTrip.id,
-            name: currentTrip.name, 
+            name: currentTrip.name,
             food: food,
             transportation: transportation,
             lodging: lodging,
@@ -46,24 +46,24 @@ function TaskFormDetail ({currentTrip, handleFormSubmit, entryFields}) {
     }
 
 
-   
+
     return (
-        <form className="ui form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
             <div className="inline fields">
                 <label>Food:
-                <input type="text" name="food" placeholder="Shopping List"value={food} onChange={handleFoodChange} />
+                    <input className="taskview-input" type="text" name="food" placeholder="Shopping List" value={food} onChange={handleFoodChange} />
                 </label>
                 <label>Transportation:
-                <input type="text" name="transportation" placeholder="Transportation Details" value={transportation} onChange={handleTransChange} />
+                    <input className="taskview-input" type="text" name="transportation" placeholder="Transportation Details" value={transportation} onChange={handleTransChange} />
                 </label>
                 <label>Lodging:
-                <input type="text" name="lodging" placeholder="Lodging Reservations" value={lodging} onChange={handleLodChange} />
+                    <input className="taskview-input" type="text" name="lodging" placeholder="Lodging Reservations" value={lodging} onChange={handleLodChange} />
                 </label>
                 <label>Activities:
-                <input type="text" name="activities" placeholder="List Activities" value={activities} onChange={handleActChange} />
+                    <input className="taskview-input" type="text" name="activities" placeholder="List Activities" value={activities} onChange={handleActChange} />
                 </label>
                 <label>Miscellaneous:
-                <input type="text" name="miscellaneous" placeholder="Additional Trip Plans" value={misc} onChange={handleMiscChange} />
+                    <input className="taskview-input" type="text" name="miscellaneous" placeholder="Additional Trip Plans" value={misc} onChange={handleMiscChange} />
                 </label>
             </div>
             <button className="ui button" type="submit">

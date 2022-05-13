@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import uuid from 'react-uuid';
 
 function TaskFormAssign({ addNewTask, passUp }) {
- 
-    const [pplAssign, setPplAssign] = useState({     
+
+    const [pplAssign, setPplAssign] = useState({
         "id": uuid,
         "name": "",
         "food": "",
@@ -12,18 +12,18 @@ function TaskFormAssign({ addNewTask, passUp }) {
         "activities": "",
         "misc": ""
     });
-    
+
     const [newTaskAs, setNewTaskAs] = useState({})
 
 
     function handleChange(e) {
-        let newEntry = {...pplAssign, [e.target.name]: e.target.value}
+        let newEntry = { ...pplAssign, [e.target.name]: e.target.value }
         setPplAssign(newEntry)
-      };
-    
+    };
+
     function handleSubmit(e) {
         e.preventDefault()
-       
+
         fetch('http://localhost:8000/trips', {
             method: 'POST',
             headers: {
@@ -35,19 +35,19 @@ function TaskFormAssign({ addNewTask, passUp }) {
         setNewTaskAs(pplAssign)
         passUp(pplAssign)
     }
-    
-    
+
+
     return (
         <>
             <div className="ui segment">
-                <form className="ui form" onSubmit={handleSubmit}>
+                <form className="form" onSubmit={handleSubmit}>
                     <div className="inline fields">
-                        <input type="text" name="name" placeholder="Name Your Trip" value={pplAssign.name} onChange={handleChange} />
-                        <input type="text" name="food" placeholder="Food" value={pplAssign.food} onChange={handleChange} />
-                        <input type="text" name="transportation" placeholder="Transportation" value={pplAssign.transportation} onChange={handleChange} />
-                        <input type="text" name="lodging" placeholder="Lodging" value={pplAssign.lodging} onChange={handleChange} />
-                        <input type="text" name="activities" placeholder="Activities" value={pplAssign.activities} onChange={handleChange} />
-                        <input type="text" name="misc" placeholder="Miscellaneous" value={pplAssign.misc} onChange={handleChange} />
+                        <input className="not-taskview" type="text" name="name" placeholder="Name Your Trip" value={pplAssign.name} onChange={handleChange} />
+                        <input className="not-taskview" type="text" name="food" placeholder="Food Boss" value={pplAssign.food} onChange={handleChange} />
+                        <input className="not-taskview" type="text" name="transportation" placeholder="Transportation Chief" value={pplAssign.transportation} onChange={handleChange} />
+                        <input className="not-taskview" type="text" name="lodging" placeholder="Lodging Director" value={pplAssign.lodging} onChange={handleChange} />
+                        <input className="not-taskview" type="text" name="activities" placeholder="Activities Mascot" value={pplAssign.activities} onChange={handleChange} />
+                        <input className="not-taskview" type="text" name="misc" placeholder="Miscellaneous Manager" value={pplAssign.misc} onChange={handleChange} />
                     </div>
                     <button className="ui button" type="submit">
                         Add Task Assignment
