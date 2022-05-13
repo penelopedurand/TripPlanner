@@ -4,6 +4,7 @@ import Home from "./Home";
 import TaskSetUp from "./TaskSetUp";
 import TaskView from "./TaskView";
 import NavBar from "./NavBar";
+import TripList from "./TripList";
 
 
 function App() {
@@ -20,7 +21,6 @@ function App() {
         setEntryFields(pplAssign)
     }
 
-
     return (
         <div>
             <NavBar />
@@ -34,6 +34,9 @@ function App() {
                 </Route>
                 <Route exact path="/taskview">
                     <TaskView trips={trips} entryFields={entryFields} />
+                </Route>
+                <Route exact path="/triplist">
+                    <TripList trips={trips} />
                 </Route>
             </Switch>
         </div>
